@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Emergency_Hotlines"
+            android:title="@string/emergency_hotlines" />
+    </group>
+
+    <item android:title="@string/legal_assistance">
+        <menu>
+            <item
+                android:id="@+id/Worker_Centers"
+                android:title="@string/worker_centers" />
+            <item
+                android:id="@+id/Advocacy_Organizations"
+                android:title="@string/advocacy_organizations" />
+            <item
+                android:id="@+id/Government_Organizations"
+                android:title="@string/government_organizations" />
+            <item
+                android:id="@+id/Immigration"
+                android:title="@string/immigration" />
+            <item
+                android:id="@+id/Housing"
+                android:title="@string/housing" />
+        </menu>
+    </item>
+
+    <item android:title="Services??">
+        <menu>
+            <item
+                android:id="@+id/Employment_Training_And_Workforce_Development"
+                android:title="@string/employment_training_and_workforce_development" />
+
+            <item
+                android:id="@+id/Community_Services"
+                android:title="@string/community_services" />
+        </menu>
+    </item>
+
+    <!--<group android:checkableBehavior="single">-->
+        <!--<item-->
+            <!--android:id="@+id/Employment_Training_And_Workforce_Development"-->
+            <!--android:title="@string/employment_training_and_workforce_development" />-->
+
+        <!--<item-->
+            <!--android:id="@+id/Community_Services"-->
+            <!--android:title="@string/community_services" />-->
+    <!--</group>-->
+
+    <item android:title="@string/health_centers">
+        <menu>
+            <item
+                android:id="@+id/Comprehensive"
+                android:title="@string/comprehensive" />
+            <item
+                android:id="@+id/Psychological_Health_And_Counseling"
+                android:title="@string/psychological_health_and_counseling" />
+            <item
+                android:id="@+id/Domestic_Abuse_And_Sexual_Assault"
+                android:title="@string/domestic_abuse_and_sexual_assault" />
+        </menu>
+    </item>
+
+    <item android:title="Health???">
+        <menu>
+            <item
+                android:id="@+id/Health_Insurance"
+                android:title="@string/health_insurance" />
+
+            <item
+                android:id="@+id/Food_Pantries"
+                android:title="@string/food_pantries" />
+        </menu>
+    </item>
+
+    <!--<group android:checkableBehavior="all">-->
+        <!--<item-->
+            <!--android:id="@+id/Health_Insurance"-->
+            <!--android:title="@string/health_insurance" />-->
+
+        <!--<item-->
+            <!--android:id="@+id/Food_Pantries"-->
+            <!--android:title="@string/food_pantries" />-->
+    <!--</group>-->
+
+</menu>
