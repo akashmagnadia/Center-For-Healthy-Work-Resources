@@ -45,13 +45,8 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
 
         MyDataModel item = getItem(position);
 
-        //to change
         //to change Visibility when N/A
-        if (item.getOrganization() .equals("N/A")) {
-            vh.textViewOrganization.setVisibility(View.GONE);
-        } else {
-            vh.textViewOrganization.setText(item.getOrganization());
-        }
+        vh.textViewOrganization.setText(item.getOrganization());
 
         if (item.getDescription() .equals("N/A")) {
             vh.textViewDescription.setVisibility(View.GONE);
@@ -83,13 +78,13 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
             vh.textViewEmail.setText(item.getEmail());
         }
 
+
         return vh.rootView;
     }
 
     private static class ViewHolder {
         final RelativeLayout rootView;
 
-        //to change
         final TextView textViewOrganization;
         final TextView textViewDescription;
         final TextView textViewLocation;
@@ -97,7 +92,6 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
         final TextView textViewPhone_Number;
         final TextView textViewEmail;
 
-        //to change
         private ViewHolder(RelativeLayout rootView, TextView textViewOrganization, TextView textViewDescription, TextView textViewLocation, TextView textViewWebsite, TextView textViewPhone_Number, TextView textViewEmail) {
             this.textViewOrganization = textViewOrganization;
             this.textViewDescription = textViewDescription;
@@ -108,7 +102,6 @@ public class MyArrayAdapter extends ArrayAdapter<MyDataModel> {
             this.rootView = rootView;
         }
 
-        //to change
         static ViewHolder create(RelativeLayout rootView) {
             TextView textViewOrganization = rootView.findViewById(R.id.textViewOrganization);
             TextView textViewDescription = rootView.findViewById(R.id.textViewDescription);

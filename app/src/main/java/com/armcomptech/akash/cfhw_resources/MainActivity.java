@@ -3,20 +3,25 @@ package com.armcomptech.akash.cfhw_resources;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -49,12 +54,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return instance;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         instance = this;
 
+        FloatingActionButton donwload = findViewById(R.id.download);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -79,12 +86,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
          */
         ListView listView = findViewById(R.id.listView);
         listView.setAdapter(adapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
 
-                //to change
-//                Snackbar.make(findViewById(R.id.parentLayout), list.get(position).getFirstName() + " => " + list.get(position).getLastName() + " => " + list.get(position).getMiddleName(), Snackbar.LENGTH_LONG).show();
+            }
+        });
+
+
+        donwload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View event) {
+                //get the data
+                ListView listView = findViewById(R.id.listView);
+                listView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             }
         });
 
